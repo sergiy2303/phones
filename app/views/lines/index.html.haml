@@ -10,5 +10,5 @@
     %tr
       %td= line.id
       %td= line.rec
-      %td= line.created_at
       %td= link_to 'Edit', edit_line_path(line)
+      %td= link_to 'Delete', line_path(line), method: :delete
