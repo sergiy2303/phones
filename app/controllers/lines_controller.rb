@@ -7,10 +7,6 @@ class LinesController < ApplicationController
   def new
   end
 
-  def show 
-    @line = Line.find(params[:id])
-  end
-
   def create
     if @line = Line.new(line_params).save
       redirect_to lines_path

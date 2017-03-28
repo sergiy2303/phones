@@ -1,4 +1,4 @@
-= form_for :organization, url: organization_path(@org), method: :patch do |f|
+= form_for @organization, url: organization_path(@organization), method: :patch do |f|
   %ul
     %li= f.label :name, 'edit Company name'
     = f.text_field :name

@@ -8,11 +8,11 @@
     %th Phone
     %th E_mail
     %th Action
-  - @orgs.each do |org|
-    %tr
-      %td= org.name
-      %td= org.address
-      %td= org.phone
-      %td= org.e_mail
-      %td= link_to 'edit', edit_organization_path(org)
-      %td= link_to 'Remove', organization_path(org), metod: :delete
+    - @organizations.each do |organization|
+      %tr
+        %td= organization.name
+        %td= organization.address
+        %td= organization.phone
+        %td= organization.e_mail
+        %td= link_to 'edit', edit_organization_path(organization)
+        %td= link_to 'Remove', organization_path(organization), method: :delete
