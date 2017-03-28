@@ -19,7 +19,6 @@ class LinesController < ApplicationController
 
   def edit
     if @line = Line.find(params[:id])
-      @as = "edit"
     end
   end
 
@@ -27,8 +26,6 @@ class LinesController < ApplicationController
     @line = Line.find(params[:id])
     if @line.update(line_params)
       redirect_to lines_path
-    else
-      render 'edit'
     end
   end
 

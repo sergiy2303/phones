@@ -1,0 +1,18 @@
+%h2 Here is all companies
+= link_to 'Back to line', lines_path
+= link_to 'Add company', new_organization_path
+%table
+  %tr
+    %th Name
+    %th Address
+    %th Phone
+    %th E_mail
+    %th Action
+  - @orgs.each do |org|
+    %tr
+      %td= org.name
+      %td= org.address
+      %td= org.phone
+      %td= org.e_mail
+      %td= link_to 'edit', edit_organization_path(org)
+      %td= link_to 'Remove', organization_path(org), metod: :delete

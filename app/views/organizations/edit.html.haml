@@ -1,0 +1,11 @@
+= form_for :organization, url: organization_path(@org), method: :patch do |f|
+  %ul
+    %li= f.label :name, 'edit Company name'
+    = f.text_field :name
+    %li= f.label :address, 'edit Address'
+    = f.text_field :address
+    %li= f.label :phome, 'edit Phone number'
+    = f.text_field :phone
+    %li= f.label :e_mail, 'edit E-mail address'
+    = f.text_field :e_mail
+    %li= f.submit
