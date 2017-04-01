@@ -4,6 +4,10 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.all
   end
 
+  def show
+    @organization = Organization.find(params[:id])
+  end
+
   def new
   end
 
@@ -34,6 +38,6 @@ class OrganizationsController < ApplicationController
 
   private
     def organization_params
-      params.require(:organization).permit(:name, :address, :phone, :e_mail)
+      params.require(:organization).permit(:name, :address, :phone, :email)
     end
 end

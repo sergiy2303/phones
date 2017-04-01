@@ -1,11 +1,10 @@
-= form_for :organization, url: organizations_path do |f|
-  %ul
-    %li= f.label :name, 'Company name'
-    = f.text_field :name
-    %li= f.label :address, 'Address'
-    = f.text_field :address
-    %li= f.label :phome, 'Phone number'
-    = f.text_field :phone
-    %li= f.label :e_mail, 'E-mail address'
-    = f.text_field :e_mail
-    %li= f.submit
+= bootstrap_form_for :organization, url: organizations_path do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :address
+  = f.text_field :address
+  = f.label :phome
+  = f.text_field :phone
+  = f.label :email
+  = f.text_field :email
+  = f.submit

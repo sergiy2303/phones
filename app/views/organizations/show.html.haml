@@ -1,0 +1,15 @@
+%h3 Company info
+= @organization.name
+= @organization.address
+= @organization.phone
+= @organization.email
+= link_to 'To companies list', organizations_path
+= bootstrap_form_for ([@organization, @organization.departaments.build]) do |f|
+  = f.text_field :departament_name
+  = f.text_area :departament_description
+  = f.submit
+%h4 List of departaments
+- @organization.departaments.each do |departament|
+  %h3= departament.departament_name
+  = departament.departament_description
+  %br/

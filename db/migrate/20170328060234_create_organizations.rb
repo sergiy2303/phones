@@ -4,7 +4,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :address
       t.string :phone
-      t.string :e_mail
+      t.string :email
 
       t.timestamps
     end
