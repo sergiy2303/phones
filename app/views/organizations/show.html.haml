@@ -9,7 +9,9 @@
   = f.text_area :departament_description
   = f.submit
 %h4 List of departaments
-- @organization.departaments.each do |departament|
-  %h3= departament.departament_name
-  = departament.departament_description
-  %br/
+%dl
+  - @organization.departaments.each do |departament|
+    %dt= departament.departament_name
+    %dd= departament.id
+    = departament.departament_description
+    = link_to 'Edit', edit_organization_departament_path([@organization, @organization])
