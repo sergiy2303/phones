@@ -4,12 +4,14 @@
 = @organization.phone
 = @organization.email
 = link_to 'To companies list', organizations_path
-= bootstrap_form_for ([@organization, @organization.departaments.build]) do |f|
-  = f.text_field :departament_name
-  = f.text_area :departament_description
-  = f.submit
+= link_to 'New departament', new_organization_departament_path(organization_id: @organization.id)
 %h4 List of departaments
 - @organization.departaments.each do |departament|
-  = departament.departament_name
-  = departament.departament_description
-  = link_to 'Edit', edit_organization_departament_path(organization_id: @organization.id, id: departament.id)
+  %h5= departament.departament_name
+  %b= link_to 'See more', edit_organization_departament_path(organization_id: @organization.id, id: departament.id)
+  %br/
+  %b= link_to 'Edit', edit_organization_departament_path(organization_id: @organization.id, id: departament.id)
+  %i= link_to 'Delete departament', organization_departament_path(organization_id: @organization.id, id: departament.id), method: :delete
+  %p= departament.departament_description
+
+

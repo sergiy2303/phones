@@ -13,6 +13,7 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
+ 
     if @organization.save
       redirect_to organizations_path
     end
@@ -24,6 +25,7 @@ class OrganizationsController < ApplicationController
 
   def update
     @organization = Organization.find(params[:id])
+
     if @organization.update(organization_params)
       redirect_to organizations_path
     end
@@ -31,6 +33,7 @@ class OrganizationsController < ApplicationController
 
   def destroy
     @organization = Organization.find(params[:id])
+
     if @organization.destroy
       redirect_to organizations_path
     end

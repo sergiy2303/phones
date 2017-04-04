@@ -1,1 +1,5 @@
 %h3 Add new departament
+=bootstrap_form_for :departament, url: organization_departaments_path(@organization) do |f|
+  = f.text_field :departament_name
+  = f.text_area :departament_description
+  = f.submit
