@@ -12,6 +12,4 @@
 - @organization.departaments.each do |departament|
   = departament.departament_name
   = departament.departament_description
-  - if departament.departament_name
-    = link_to 'Edit', edit_organization_departament_path([@organization, departament])
-
+  = link_to 'Edit', edit_organization_departament_path(organization_id: @organization.id, id: departament.id)
