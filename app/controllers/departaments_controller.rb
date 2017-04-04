@@ -9,7 +9,8 @@ class DepartamentsController < ApplicationController
   end
 
   def edit
-    @departament = Departament.find(params[:organization_id])
+    @organization = Organization.find(params[:organization_id])
+    @departament = @organization.departaments.find(params[:id])
   end
 
   def create
