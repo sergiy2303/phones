@@ -1,1 +1,14 @@
-%h2 Departaments
+%h5 Departaments
+= link_to 'Add departament', new_organization_departament_path()
+%br/
+= link_to 'company data', organization_path(params[:organization_id])
+%br/
+%table
+  %tr
+    %td
+- @departaments.each do |departament|
+  = departament.id
+  %br/
+  = departament.departament_description
+  %br/
+  = departament.organization_id

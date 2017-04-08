@@ -1,0 +1,6 @@
+= link_to 'New unit', new_organization_departament_personal_path()
+%h2 All unins
+- @personals.each do |personal|
+  = personal.full_name
+  = personal.departament_id
+  %br/
