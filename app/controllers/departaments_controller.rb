@@ -1,6 +1,7 @@
 class DepartamentsController < ApplicationController
 
   def index
+    @organizations = Organization.find(params[:organization_id])
     @departaments = Departament.where(organization_id: params[:organization_id])
   end
 
@@ -30,7 +31,7 @@ class DepartamentsController < ApplicationController
     @departament = @organization.departaments.find(params[:id])
     
     if @departament.update(departament_params)
-      redirect_to organization_path(params[:organization_id])
+      redirect_to organization_departaments_path(params[:organization_id])
     end
   end
 
@@ -39,7 +40,7 @@ class DepartamentsController < ApplicationController
     @departament = @organization.departaments.find(params[:id])
 
     if @departament.destroy
-      redirect_to organization_path(params[:organization_id])
+      redirect_to organization_departaments_path(params[:organization_id])
     end
   end
 

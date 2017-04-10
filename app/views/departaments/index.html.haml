@@ -3,12 +3,19 @@
 %br/
 = link_to 'company data', organization_path(params[:organization_id])
 %br/
-%table
+= link_to 'To companies list', organizations_path
+%table.table-bordered
   %tr
-    %td
-- @departaments.each do |departament|
-  = departament.id
-  %br/
-  = departament.departament_description
-  %br/
-  = departament.organization_id
+    %th Departament id
+    %th Departament name
+    %th Departament description
+    %th Organization id
+    %th{:colspan => "2"} Actions
+    - @departaments.each do |departament|
+      %tr
+        %td= departament.id
+        %td= departament.departament_name
+        %td= departament.departament_description
+        %td= departament.organization_id
+        %td= link_to 'Edit', edit_organization_departament_path(departament.organization_id, departament.id)
+        %td= link_to 'Delete departament', organization_departament_path(departament.organization_id, departament.id), method: :delete
