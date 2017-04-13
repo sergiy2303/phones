@@ -10,7 +10,7 @@
     %th Departament name
     %th Departament description
     %th Organization id
-    %th{:colspan => "2"} Actions
+    %th{:colspan => "3"} Actions
     - @departaments.each do |departament|
       %tr
         %td= departament.id
@@ -18,4 +18,5 @@
         %td= departament.departament_description
         %td= departament.organization_id
         %td= link_to 'Edit', edit_organization_departament_path(departament.organization_id, departament.id)
+        %td= link_to 'See more', organization_departament_personals_path(departament.organization_id, departament.id)
         %td= link_to 'Delete departament', organization_departament_path(departament.organization_id, departament.id), method: :delete

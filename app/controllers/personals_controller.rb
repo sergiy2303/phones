@@ -1,7 +1,7 @@
 class PersonalsController < ApplicationController
 
   def index
-    @personals = Personal.all
+    @personals = Personal.where(params[:departament_id])
   end
 
   def show
@@ -20,8 +20,10 @@ class PersonalsController < ApplicationController
   def create
     @organization = Organization.find(params[:organization_id])
     @departament = Departament.find(params[:departament_id])
-    @personal = Personal.create(personal_params)
-    redirect_to organizations_path
+
+    if @personal = Personal.create(personal_params)
+      redirect_to organization_departament_personals_path
+    end
   end
 
   def edit
@@ -35,6 +37,6 @@ class PersonalsController < ApplicationController
 
   private 
     def personal_params
-      params.require(:personal).permit(:full_name)
+      params.require(:personal).permit(:full_name, :departament_id)
     end
 end

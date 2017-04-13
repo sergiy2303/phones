@@ -39,11 +39,9 @@ ActiveRecord::Schema.define(version: 20170404212129) do
   create_table "personals", force: :cascade do |t|
     t.string   "full_name"
     t.integer  "departament_id"
-    t.integer  "organization_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["departament_id"], name: "index_personals_on_departament_id"
-    t.index ["organization_id"], name: "index_personals_on_organization_id"
   end
 
 end
