@@ -1,4 +1,4 @@
 class Departament < ApplicationRecord
-  belongs_to :organizations
-  has_many :personals, dependent: :destroy
+  belongs_to :organization
+  has_many :units, dependent: :destroy
 end

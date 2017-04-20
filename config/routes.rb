@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :lines
   resources :organizations do
     resources :departaments do
-      resources :personals
+      resources :units
     end
   end
   root 'organizations#index'

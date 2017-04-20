@@ -8,7 +8,7 @@ class LinesController < ApplicationController
   end
 
   def create
-    if @line = Line.new(line_params).save
+    if @line = Line.create(line_params)
       redirect_to lines_path
     end
   end
