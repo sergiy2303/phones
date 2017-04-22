@@ -1,9 +1,16 @@
-%h5 Company info
+.navbar.navbar-default{:role=>"navigation"}>
+  .container-fluid
+    .navbar-header
+      .navbar-brand 
+        Contact information of
+        = organization.name
+        company
+    .collapse.navbar-collapse
+    #bs-example-navbar-collapse-1
+    %ul.nav.navbar-nav
+      %li= link_to 'ALL COMPANIES', organizations_path()
+      %li= link_to 'DEPARTAMENTS', organization_departaments_path(organization)
 = organization.name
 = organization.address
 = organization.phone
 = organization.email
-%br/
-= link_to 'To companies list', organizations_path
-%br/
-= link_to 'Depataments',organization_departaments_path(organization)

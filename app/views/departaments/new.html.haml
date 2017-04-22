@@ -1,6 +1,9 @@
-%h5 Add new departament
-= link_to 'Back to departament list', organization_departaments_path(organization)
-=bootstrap_form_for :departament, url: organization_departaments_path(organization) do |f|
-  = f.text_field :departament_name
-  = f.text_area :departament_description
-  = f.submit
+.panel.panel-primary
+  .panel-heading
+    NEW
+  .panel-body
+    =bootstrap_form_for :departament, url: organization_departaments_path(organization) do |f|
+      = f.text_field :departament_name
+      = f.text_area :departament_description
+      = f.submit :class => "btn btn-primary"
+      = link_to 'CANCEL', organization_departaments_path(organization), :type=> "button", :class => "btn btn-danger"

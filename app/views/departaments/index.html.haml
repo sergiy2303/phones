@@ -1,10 +1,17 @@
-%h5 Departaments
-= link_to 'Add departament', new_organization_departament_path()
-%br/
-= link_to 'company data', organization_path(params[:organization_id])
-%br/
-= link_to 'To companies list', organizations_path
-%table.table-bordered
+.navbar.navbar-default{:role=>"navigation"}>
+  .container-fluid
+    .navbar-header
+      .navbar-brand 
+        This all departaments of 
+        = organization.name
+        company
+    .collapse.navbar-collapse
+    #bs-example-navbar-collapse-1
+    %ul.nav.navbar-nav
+      %li= link_to 'ALL COMPANIES', organizations_path()
+      %li= link_to 'MY COMPANY', organization_path(id: organization.id)
+      %li= link_to 'NEW DEPARTAMENT', new_organization_departament_path(), :type=> "button", :class => "btn btn-default"
+%table.table
   %tr
     %th Departament id
     %th Departament name

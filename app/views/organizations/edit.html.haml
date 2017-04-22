@@ -1,6 +1,11 @@
-= bootstrap_form_for organization, url: organization_path(organization), method: :patch do |f|
-  = f.text_field :name
-  = f.text_field :address
-  = f.text_field :phone
-  = f.text_field :email
-  = f.submit
+.panel.panel-primary
+  .panel-heading
+    EDIT
+  .panel-body
+    = bootstrap_form_for organization, url: organization_path(organization), method: :patch do |f|
+      = f.text_field :name
+      = f.text_field :address
+      = f.text_field :phone
+      = f.text_field :email
+      = f.submit :class => "btn btn-primary"
+      = link_to 'CANCEL', organizations_path(), :type=> "button", :class => "btn btn-danger"

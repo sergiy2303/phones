@@ -1,3 +1,8 @@
-= bootstrap_form_for @unit, url: organization_departament_units_path(:organization_id => organization.id, :departament_id => departament.id) do |f|
-  = f.text_field :full_name
-  = f.submit
+.panel.panel-primary
+  .panel-heading
+    CREATE
+  .panel-body
+    = bootstrap_form_for @unit, url: organization_departament_units_path(:organization_id => organization.id, :departament_id => departament.id) do |f|
+      = f.text_field :full_name
+      = f.submit :class => "btn btn-primary"
+      = link_to 'CANCEL', organization_departament_units_path(organization), :type=> "button", :class => "btn btn-danger"

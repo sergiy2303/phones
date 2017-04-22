@@ -1,11 +1,15 @@
 .row
   .col-md-8
-    = link_to 'Back to line', lines_path
-    = link_to 'Add company', new_organization_path
-    %form.navbar-form.navbar-left{:role => "search"}
-      .form-group
-        %input.form-control{:placeholder => "Search the company", :type => "text"}
-        %button.btn.btn-default{:type => "submit"} Submit
+    .navbar.navbar-default{:role=>"navigation"}>
+      .container-fluid
+        .navbar-header
+          .navbar-brand 
+            Create you list you company stucrure by us
+        .collapse.navbar-collapse
+        #bs-example-navbar-collapse-1
+        %ul.nav.navbar-nav
+          %li= link_to 'FIRST LINES', lines_path
+          %li= link_to 'ADD COMPANY', new_organization_path(), :type=> "button", :class => "btn btn-default"
   .col-md-4
     .page-header
       %h3 Try create contact book with rails

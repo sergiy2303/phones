@@ -1,6 +1,20 @@
-%h5
-  Info of
-  = unit.full_name
-= unit.full_name
-= unit.id
-= link_to 'All units', organization_departament_units_path()
+.navbar.navbar-default{:role=>"navigation"}>
+  .container-fluid
+    .navbar-header
+      .navbar-brand 
+        Detail information about 
+        = unit.full_name
+    .collapse.navbar-collapse
+    #bs-example-navbar-collapse-1
+    %ul.nav.navbar-nav
+      %li= link_to 'ALL COMPANIES', organizations_path()
+      %li= link_to 'MY COMPANY', organization_path(id: organization.id)
+      %li= link_to 'DEPARTAMENTS', organization_departaments_path()
+      %li= link_to 'ALL UNITS', organization_departament_units_path()
+%table.table
+  %tr
+    %th Id
+    %th Full name
+  %tr
+    %td= unit.id
+    %td= unit.full_name
