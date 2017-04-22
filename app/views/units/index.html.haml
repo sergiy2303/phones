@@ -3,6 +3,7 @@
 = link_to 'My company', organization_path(id: organization.id)
 = link_to 'departaments', organization_departaments_path()
 = link_to 'add new unit', new_organization_departament_unit_path()
+
 %table.table-striped
   %tr
     %th Unit name
@@ -13,3 +14,9 @@
       %td= link_to 'detail', organization_departament_unit_path(id: unit.id)
       %td= link_to 'edit', edit_organization_departament_unit_path(id: unit.id)
       %td= link_to 'destroy', organization_departament_unit_path(id: unit.id), method: :delete
+
+= render "1.html.erb"
+form.navbar-form.navbar-left{:role => "search"}
+.form-group
+  %input.form-control{:placeholder => "Search", :type => "text"}/
+%button.btn.btn-default{:type => "submit"} Submit
